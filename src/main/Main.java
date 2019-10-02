@@ -11,9 +11,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		//Scanner s = new Scanner (System.in);
-		String to_Convert = "test";
+		//String to_Convert = "Taschenrechner";
+		String to_Convert = "SCHIFFAHRTSGESELLSCHAFT";
 		double oldSize = to_Convert.length() * 7;
-		System.out.println("Testing: " + to_Convert + " with " + oldSize + " bit length" + "\n");
+		System.out.println("Testing: " + to_Convert + " with " + (int) oldSize + " bit length" + "\n");
 		Map<Character, Integer> map = count(to_Convert);
 		List<Node> nodes = new ArrayList<>();
 		
@@ -35,7 +36,7 @@ public class Main {
 			newLen += node.getByteSequence().length() * node.getCount();
 		});
 		System.out.println("New length: " + newLen);
-		System.out.printf("Kompressionfactor: %.0f%c", oldSize / newLen * 10, '%');
+		System.out.printf("Kompressionfactor: %.0f%c", newLen / oldSize * 100, '%');
 		//s.close();
 	}
 	
